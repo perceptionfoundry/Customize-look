@@ -31,7 +31,7 @@ class customTF: UITextField, UITextFieldDelegate {
         self.layer.masksToBounds = true
         
         if(self.attributedPlaceholder?.string != nil){
-            let placholderString = NSMutableAttributedString(string: self.attributedPlaceholder!.string, attributes: [NSAttributedStringKey.foregroundColor:placeholderColor])
+            let placholderString = NSMutableAttributedString(string: self.attributedPlaceholder!.string, attributes: [NSAttributedString.Key.foregroundColor:placeholderColor])
             self.attributedPlaceholder = placholderString
         }
         
@@ -39,17 +39,17 @@ class customTF: UITextField, UITextFieldDelegate {
             if(iconIndent>0){
                 let imageView = UIImageView(frame: CGRect(x: iconIndent, y: 0, width: 20, height: 20))
                 imageView.center.y=self.icony
-                imageView.contentMode=UIViewContentMode.scaleAspectFit
-                imageView.image = icon?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+                imageView.contentMode=UIView.ContentMode.scaleAspectFit
+                imageView.image = icon?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
                 self.addSubview(imageView)
                 print(imageView.frame)
             }
             else{
                 let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 27, height: 20))
-                imageView.contentMode=UIViewContentMode.scaleAspectFit
-                imageView.image = icon?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+                imageView.contentMode=UIView.ContentMode.scaleAspectFit
+                imageView.image = icon?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
                 self.leftView = imageView
-                self.leftViewMode = UITextFieldViewMode.always
+                self.leftViewMode = UITextField.ViewMode.always
                 self.addSubview(imageView)
             }
         }
